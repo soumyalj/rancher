@@ -1,0 +1,31 @@
+ssh_key_path: /Users/soumya/.ssh/$AWS_SSH_KEY_NAME
+auth:
+  strategy: x509
+nodes:
+  - address: $ip0
+    user: ubuntu
+    role: [etcd]
+  - address: $ip1
+    user: ubuntu
+    role: [controlplane]
+  - address: $ip2
+    user: ubuntu
+    role: [controlplane]
+  - address: $ip3
+    user: ubuntu
+    role: [controlplane]
+  - address: $ip4
+    user: ubuntu
+    role: [worker]
+  - address: $ip5
+    user: ubuntu
+    role: [worker]
+  - address: $ip6
+    user: ubuntu
+    role: [worker]
+  - address: $ip7
+    user: ubuntu
+    role: [worker]
+  - address: $ip8
+    user: ubuntu
+    role: [worker]

@@ -58,11 +58,16 @@ class CloudProviderBase(object, metaclass=abc.ABCMeta):
             raise Exception("Failed to generate ssh key: {0}".format(e))
         return public_ssh_key
 
+
     def get_ssh_key(self, ssh_key_name):
-        with open(self.get_ssh_key_path(ssh_key_name), 'r') as f:
+        #with open(self.get_ssh_key_path(ssh_key_name), 'r') as f:
+        #    ssh_key = f.read()
+        with open('/Users/soumya/.ssh/jenkins-rke-validation.pem'.format(ssh_key_name), 'r') as f:
             ssh_key = f.read()
         return ssh_key
 
+
     def get_ssh_key_path(self, ssh_key_name):
-        key_path = os.path.abspath('.ssh/{}'.format(ssh_key_name))
+        #key_path = os.path.abspath('.ssh/{}'.format(ssh_key_name))
+        key_path = os.path.abspath('/Users/soumya/.ssh/jenkins-rke-validation.pem'.format(ssh_key_name))
         return key_path
